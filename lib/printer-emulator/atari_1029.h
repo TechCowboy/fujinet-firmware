@@ -3,7 +3,6 @@
 
 #include "pdf_printer.h"
 
-
 class atari1029 : public pdfPrinter
 {
 protected:
@@ -40,6 +39,7 @@ protected:
     virtual void post_new_file() override;
 
 public:
+    atari1029(double _top_margin = 0.0) : pdfPrinter{_top_margin} {}
     const char *modelname() { return "Atari 1029"; };
 };
 

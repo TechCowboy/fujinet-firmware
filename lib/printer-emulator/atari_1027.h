@@ -11,11 +11,13 @@ protected:
     bool intlFlag = false;
     bool uscoreFlag = false;
     bool escMode = false;
-    
-   virtual void pdf_clear_modes() override {};
+
+    virtual void pdf_clear_modes() override{};
     void pdf_handle_char(uint8_t c, uint8_t aux1, uint8_t aux2);
     virtual void post_new_file() override;
+
 public:
+    atari1027(double _top_margin = 0.0) : pdfPrinter{_top_margin} {}
     const char *modelname() { return "Atari 1027"; };
 };
 

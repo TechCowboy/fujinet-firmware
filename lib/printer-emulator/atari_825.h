@@ -40,6 +40,7 @@ protected:
     virtual void post_new_file() override;
 
 public:
+    atari825(double _top_margin = 0.0) : pdfPrinter{_top_margin} {}
     const char *modelname() { return "Atari 825"; };
 
 private:

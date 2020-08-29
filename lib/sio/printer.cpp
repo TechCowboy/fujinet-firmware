@@ -11,7 +11,6 @@
 #include "atari_1027.h"
 #include "atari_1029.h"
 #include "epson_80.h"
-#include "epson_tps.h"
 #include "okimate_10.h"
 #include "png_printer.h"
 
@@ -170,10 +169,10 @@ void sioPrinter::set_printer_type(sioPrinter::printer_type printer_type)
         _pptr = new atari1029;
         break;
     case PRINTER_EPSON:
-        _pptr = new epson80;
+        _pptr = new epson80(-1.5);
         break;
     case PRINTER_EPSON_PRINTSHOP:
-        _pptr = new epsonTPS;
+        _pptr = new epson80(-13.5);
         break;
     case PRINTER_OKIMATE10:
         _pptr = new okimate10;

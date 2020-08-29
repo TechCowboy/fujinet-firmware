@@ -11,7 +11,7 @@ protected:
     bool intlFlag = false;
     bool shortFlag = false;
     bool escMode = false;
-    
+
     void set_line_long();
     void set_line_short();
     void print_char(uint8_t c);
@@ -21,6 +21,7 @@ protected:
     virtual void post_new_file() override;
 
 public:
+    atari1025(double _top_margin = 0.0) : pdfPrinter{_top_margin} {}
     const char *modelname() { return "Atari 1025"; };
 };
 

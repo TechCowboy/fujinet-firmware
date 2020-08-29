@@ -3,7 +3,6 @@
 
 #include "pdf_printer.h"
 
-
 class epson80 : public pdfPrinter
 {
 protected:
@@ -12,7 +11,7 @@ protected:
         uint8_t cmd = 0;
         uint8_t N1 = 0;
         uint8_t N2 = 0;
-        uint16_t N= 0;
+        uint16_t N = 0;
         uint16_t ctr = 0;
     } epson_cmd;
     bool escMode = false;
@@ -42,10 +41,12 @@ protected:
     void epson_set_font(uint8_t F, double w);
     void at_reset();
 
-   virtual void pdf_clear_modes() override {};
+    virtual void pdf_clear_modes() override{};
     void pdf_handle_char(uint8_t c, uint8_t aux1, uint8_t aux2) override;
     virtual void post_new_file() override;
+
 public:
+    epson80(double _top_margin = -1.5) : pdfPrinter{_top_margin} {}
     const char *modelname() { return "Epson 80"; };
 };
 

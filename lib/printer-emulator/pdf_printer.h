@@ -77,7 +77,7 @@ protected:
     virtual void pre_close_file() override;
 
 public:
-  pdfPrinter(double _tm = 0.0) : topMargin{_tm} { _paper_type = PDF; };
+  pdfPrinter(double _tm) : topMargin{_tm} { _paper_type = PDF; };
 };
 
 #endif // guard
