@@ -41,7 +41,7 @@ protected:
     uint8_t fontHorizScale = 100;
     std::string shortname;
     bool fontUsed[MAXFONTS] = {true}; // initialize first one to true, always use default font
-    double pdf_X = 0.;                 // across the page - columns in pts
+    double pdf_X = 0.;                // across the page - columns in pts
     bool BOLflag = true;
     double pdf_Y = 0.;  // down the page - lines in pts
     double pdf_dY = 0.; // used for linefeeds with pdf rise parameter
@@ -77,7 +77,8 @@ protected:
     virtual void pre_close_file() override;
 
 public:
-  pdfPrinter(double _tm) : topMargin{_tm} { _paper_type = PDF; };
+    pdfPrinter(double _tm) : topMargin{_tm} { _paper_type = PDF; };
+    void pdf_set_top_margin(double _tm) { topMargin = _tm; };
 };
 
 #endif // guard
